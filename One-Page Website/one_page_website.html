@@ -23,18 +23,35 @@
         <p>This is a simple one-page website about cars. I am learning HTML and CSS and this is my assignment.</p>
     </section>
 
-    <!-- Image gallery section -->
+    <!-- Image gallery section (UPDATED FOR LIGHTBOX) -->
     <section id="gallery">
         <h2>Car Gallery</h2>
-        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=800" alt="Classic car">
-        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800" alt="Red sports car">
-        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800" alt="Yellow supercar">
+
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=400"
+                 data-large="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=1200"
+                 alt="Classic car">
+
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=400"
+                 data-large="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1200"
+                 alt="Red sports car">
+
+            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400"
+                 data-large="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200"
+                 alt="Yellow supercar">
+        </div>
     </section>
 
     <!-- Video section -->
     <section id="videos">
         <h2>Car Video</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        <iframe width="560" height="315"
+src="https://www.youtube.com/embed/7pKfPomDEeI"
+title="Car Driving Video"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
         <p>This is a video about amazing cars.</p>
     </section>
 
@@ -54,5 +71,6 @@
         <p>© 2025 My Cars Showcase - Student Project</p>
     </footer>
 
+<script src="js/one_page_website.js"></script>
 </body>
 </html>
