@@ -8,69 +8,96 @@
 </head>
 <body>
 
-    <!-- Navigation bar with bookmarks -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#videos">Videos</a>
-        <a href="#contact">Contact</a>
-        <a href="#footer">Footer</a>
-    </nav>
+<!-- Navigation bar -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#videos">Videos</a>
+    <a href="#contact">Contact</a>
+    <a href="#footer">Footer</a>
+</nav>
 
-    <!-- Home section -->
-    <section id="home">
-        <h1>Welcome to My Cars Showcase</h1>
-        <p>This is a simple one-page website about cars. I am learning HTML and CSS and this is my assignment.</p>
-    </section>
+<!-- Home section -->
+<section id="home">
+    <h1>Welcome to My Cars Showcase</h1>
+    <p>This is a simple one-page website about cars. I am learning HTML and CSS and this is my assignment.</p>
+</section>
 
-    <!-- Image gallery section (UPDATED FOR LIGHTBOX) -->
-    <section id="gallery">
-        <h2>Car Gallery</h2>
+<!-- Image gallery section -->
+<section id="gallery">
+    <h2>Car Gallery</h2>
 
-        <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=400"
-                 data-large="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=1200"
-                 alt="Classic car">
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=400"
+             onclick="openModal();currentSlide(1)"
+             alt="Classic car">
 
-            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=400"
-                 data-large="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1200"
-                 alt="Red sports car">
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=400"
+             onclick="openModal();currentSlide(2)"
+             alt="Red sports car">
 
-            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400"
-                 data-large="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200"
-                 alt="Yellow supercar">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400"
+             onclick="openModal();currentSlide(3)"
+             alt="Yellow supercar">
+    </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+
+    <div class="modal-content">
+
+        <div class="mySlides">
+            <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=1200">
         </div>
-    </section>
 
-    <!-- Video section -->
-    <section id="videos">
-        <h2>Car Video</h2>
-        <iframe width="560" height="315"
-src="https://www.youtube.com/embed/7pKfPomDEeI"
-title="Car Driving Video"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen>
-</iframe>
-        <p>This is a video about amazing cars.</p>
-    </section>
+        <div class="mySlides">
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1200">
+        </div>
 
-    <!-- Contact form section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message">
-        </form>
-    </section>
+        <div class="mySlides">
+            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200">
+        </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <p>© 2025 My Cars Showcase - Student Project</p>
-    </footer>
+        <!-- Navigation arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
 
+<!-- Video section -->
+<section id="videos">
+    <h2>Car Video</h2>
+
+    <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/7pKfPomDEeI"
+        title="Car Driving Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+
+    <p>This is a video about amazing cars.</p>
+</section>
+
+<!-- Contact form -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+        <input type="submit" value="Send Message">
+    </form>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+    <p>© 2025 My Cars Showcase - Student Project</p>
+</footer>
+
+<!-- JavaScript -->
 <script src="js/one_page_website.js"></script>
 </body>
 </html>

@@ -1,35 +1,43 @@
-//Lightbox modal gallery
+// Slideshow Lightbox (W3Schools style)
 
-//Create modal container
-let modal = document.createElement("div");
-modal.id = "lightbox";
-modal.innerHTML = `
-    <span id="close-lightbox">&times;</span>
-    <img id="lightbox-img">
-`;
-document.body.appendChild(modal);
+let slideIndex = 1;
 
-//Select all images inside gallery
-let images = document.querySelectorAll(".gallery img");
-let lightboxImg = document.getElementById("lightbox-img");
-let lightbox = document.getElementById("lightbox");
+// Open the modal
+function openModal() {
+    document.getElementById("myModal").style.display = "block";
+    showSlides(slideIndex);
+}
 
-//Open modal on click
-images.forEach(img => {
-    img.addEventListener("click", function() {
-        lightbox.style.display = "flex";
-        lightboxImg.src = this.dataset.large;
-    });
-});
+// Close the modal
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
 
-//Close modal
-document.getElementById("close-lightbox").onclick = function() {
-    lightbox.style.display = "none";
-};
+// Next / Previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
 
-//Close when background clicked
-lightbox.onclick = function(e) {
-    if (e.target === lightbox) {
-        lightbox.style.display = "none";
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+// Display the current slide
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+
+    if (n > slides.length) {
+        slideIndex = 1;
     }
-};
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+}

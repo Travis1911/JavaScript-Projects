@@ -45,10 +45,11 @@ p {
 }
 
 /* Image gallery */
-#gallery img {
+.gallery img {
     width: 30%;
     margin: 10px 1%;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Video iframe */
@@ -68,13 +69,12 @@ form {
 
 form input,
 form textarea {
-    width: 100%;                /* Full width input fields */
-    margin-bottom: 15px;        /* Space between inputs */
+    width: 100%;
+    margin-bottom: 15px;
     padding: 10px;
     font-size: 14px;
-
-    border: 2px solid #333;     /* Thick input border */
-    border-radius: 6px;         /* Rounded corners */
+    border: 2px solid #333;
+    border-radius: 6px;
     box-sizing: border-box;
 }
 
@@ -100,31 +100,59 @@ footer {
     margin-top: 20px;
 }
 
-/* LIGHTBOX STYLES */
-#lightbox {
+/* ========================= */
+/* SLIDESHOW LIGHTBOX STYLES */
+/* ========================= */
+
+.modal {
+    display: none;
     position: fixed;
-    top: 0;
+    z-index: 9999;
+    padding-top: 80px;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+    background-color: rgba(0,0,0,0.9);
 }
 
-#lightbox img {
-    max-width: 80%;
-    max-height: 80%;
+.modal-content {
+    position: relative;
+    margin: auto;
+    width: 80%;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
     border-radius: 8px;
 }
 
-#close-lightbox {
+/* Close button */
+.close {
     position: absolute;
-    top: 20px;
-    right: 35px;
-    font-size: 50px;
+    top: 30px;
+    right: 40px;
     color: white;
+    font-size: 40px;
+    font-weight: bold;
     cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-size: 30px;
+    user-select: none;
+}
+
+.next {
+    right: 0;
 }
